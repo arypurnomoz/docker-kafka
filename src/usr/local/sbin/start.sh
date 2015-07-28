@@ -3,17 +3,9 @@
 # Fail hard and fast
 set -eo pipefail
 
-if [ -z "$KAFKA_BROKER_ID" ]; then
-  echo "\$KAFKA_BROKER_ID not set"
-  exit 1
-fi
-echo "KAFKA_BROKER_ID=$KAFKA_BROKER_ID"
 
-if [ -z "$KAFKA_ADVERTISED_HOST_NAME" ]; then
-  echo "\$KAFKA_ADVERTISED_HOST_NAME not set"
-  exit 1
-fi
-echo "KAFKA_ADVERTISED_HOST_NAME=$KAFKA_ADVERTISED_HOST_NAME"
+KAFKA_BROKER_ID=`hostname`
+KAFKA_ADVERTISED_HOST_NAME=`hostname`
 
 if [ -z "$KAFKA_ZOOKEEPER_CONNECT" ]; then
   echo "\$KAFKA_ZOOKEEPER_CONNECT not set"
