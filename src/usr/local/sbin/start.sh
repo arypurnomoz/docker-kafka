@@ -3,7 +3,6 @@
 # Fail hard and fast
 set -eo pipefail
 
-
 KAFKA_BROKER_ID=`hostname`
 KAFKA_ADVERTISED_HOST_NAME=`hostname`
 
